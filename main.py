@@ -28,6 +28,7 @@ def index():
             new_task = TaskManager(task_name=task)
             db.session.add(new_task)
             db.session.commit()
+            return redirect(url_for('index'))
     
     return render_template('index.html', tasks=tasks, form=form)
 
